@@ -31,13 +31,33 @@ ul.tree {
     width: 200px;
     background-color: #f1f1f1;
 }
-
-ul.tree li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
+/*TEST*/
+.tree a, button-nav{
+    padding: 6px 8px 6px 16px;
     text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
 }
+.tree {
+    height: 100%;
+    width: 200px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* END TEST */
+
 
 /* Change the link color on hover */
 ul.tree li a:hover {
@@ -187,4 +207,12 @@ ul.breadcrumb li a:hover {
 /* END BREADCRUMB NAVIGATION */
 
 
+/*Dropdown Menu */
+.hiddenMenu{
+    display: none;
+}
+.shownMenu{
+    display: block;
+}
+/*END Dropdown Menu */
 

@@ -1,16 +1,18 @@
-
-  function displayHideMenu() 
+var dropdown = document.getElementsById("DownTree");
+var i;
+for (i = 0; i < dropdown.length; i++) 
+{
+  dropdown[i].addEventListener("click", 
+  function() 
   {
-    document.getElementById('Menu').classList.toggle("shownMenu");
-  }
-
-  document.addEventListener("click",
-  	function(event) 
-  	{
-  			if(!event.target.matches()) 
-  			{
-
-  			}
-  			displayHideMenu();
-  	}
-  );
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") 
+    {
+      dropdownContent.style.display = "none";
+    } 
+    else 
+    {
+      dropdownContent.style.display = "block";
+    }
+  });
+}

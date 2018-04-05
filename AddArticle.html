@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add an article</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+<div class="grid-container">
+    <br/>
+    <form class="form form-grid">
+        <fieldset>
+            <legend>Add an article:</legend>        
+            Title:<br>
+            <div class="tooltip">
+              <input type="Text" name="title" placeholder="Title of the article" required spellcheck="true" pattern="[a-zA-Z0-9À-ž\s]+" title="You should use letters and numbers.">
+              <span class="tooltiptext">You should only use letters and numbers.</span>
+            </div><br>
+            
+            Text:<br>
+            <textarea name="Text" rows="20" cols="60" placeholder="Write here your article please." required spellcheck="true"></textarea><br>
+            Add some picture:<br>
+            <input type="radio" name="File" value="PC" checked><input type="File" name="File"><br>
+            <input type="radio" name="File" value="URL"><input type="URL" name="File" placeholder="Write your URL"><br>
+            Add some keyword:
+            <input type="Text" name="keyword" list="socialNetwork"><br>
+                <datalist id="socialNetwork">
+                    <option value="Linkedin">
+                    <option value="Snapchat">
+                    <option value="Instagram">
+                    <option value="Facebook">
+                    <option value="Twitter">
+                    <option value="Youtube">
+                </datalist>
+            Date and time of the article:<br>
+            <input type="datetime-local" name="today">
+        </fieldset><br>
+        <fieldset>
+            <legend>More about you:</legend>
+            Your name:<br>
+            <input type="Text" name="name" placeholder="Write your name please." required spellcheck="false"><br>
+            Your email:<br>
+            <input type="email" name="email" placeholder="Write your email please." autocomplete="off" spellcheck="false"><br>
+        </fieldset><br>
+        <input type="submit" value="Créer"> <input type="reset" value="Réinitialiser le formulaire"><br>
+    </form>
+
+    <footer class="footer-grid">
+    <br><br>
+      Breadcrumb Navigation : 
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li>Add an article</li>
+      </ul>
+      <p> Date of today : 01/03/2018. Written by Grégoire Meunier</p>
+      <p> You can write me on <a href="mailto:gregoire@meunier.fr?Subject=About%20Facebook" target="_top">Grégoire Meunier </a></p>
+    </footer>
+
+    <!--<form method="POST" action="index.html" class="menu-grid"><br/><br/>
+    <div class="tooltip">
+      <button type="submit" name="submit" value="submit">BACK TO THE MENU</button>
+      <span class="tooltiptext">Click to come back</span>
+    </div>
+    </form>-->
+    <div class="menu-grid">
+        My Trees <br/>
+        <i class="fa fa-bars"></i>
+        <ul class="tree">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AddArticle.html">Add an article</a></li>
+          <li><a href="AddComment.html">Add a comment</a></li>
+          <li><a href="article1.html">Article 1</a></li>
+          <li><a href="article2.html">Article 2</a></li>
+          <li><a href="article3.html">Article 3</a></li>
+        </ul>
+          <!--button id="MenuB" onclick="displayHideMenu()">Articles</button>
+            <nav id=""> </nav>-->
+
+        <br/><br/>
+         <a href="AddArticle.html" target="_top">Add an article</a><br/>
+         <a href="AddComment.html" target="_top">Add a comment</a><br/>
+    </div>
+
+    <!-- with <button> but not validate by W3C -->
+    <!--
+    <div class="tooltip">
+      <a href="index.html" target="_top"><button>BACK TO THE MENU</button></a>
+      <span class="tooltiptext">Click to come back</span>
+    </div> 
+    -->
+</div>
+</body>
+</html>
+
+

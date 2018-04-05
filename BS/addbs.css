@@ -1,0 +1,27 @@
+/*GRID VIEW*/
+.form-grid {
+	grid-area: form-grid; 
+}
+.menu-grid { 
+	grid-area: menu-grid; 
+}
+.footer-grid { 
+	grid-area: footer-grid; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'menu-grid form-grid form-grid form-grid form-grid'
+    'menu-grid form-grid form-grid form-grid form-grid'
+    'menu-grid form-grid form-grid form-grid form-grid'
+    'footer-grid footer-grid footer-grid footer-grid footer-grid';
+  grid-gap: 10px;
+  padding: 10px;
+}
+.grid-container > div {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+/* END GRID VIEW */

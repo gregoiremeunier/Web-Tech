@@ -1,3 +1,9 @@
+//tootips
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+//dropdown menu index page
 var dropdown = document.getElementsById("DownTree");
 var i;
 for (i = 0; i < dropdown.length; i++) 

@@ -23,3 +23,16 @@ for (i = 0; i < dropdown.length; i++)
     }
   );
 }
+
+function LowVisionMode()
+{
+  document.body.style.fontSize = '200%';
+  $(document.body).addClass("text-white");
+  $("h4").removeClass("italic");
+}
+function NormalVisionMode()
+{
+  document.body.style.fontSize = '100%';
+  $(document.body).removeClass("text-white")
+  $("h4").addClass("italic");
+}

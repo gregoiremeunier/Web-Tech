@@ -33,16 +33,16 @@ function navHtml(startIndex, articlesCount, articlesTotalCount){
         var prev = startIndex - articlesPerPage;
         var next = startIndex + articlesPerPage;
        // document.write("prev1 :"+prev);
-        htmlKod+=" <button onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
         return htmlKod;
     }
     else if((startIndex + articlesPerPage)< articlesTotalCount) //we are far from the upper border => we can go next
     {
         var next = startIndex + articlesPerPage;
         //document.write("next2 :"+next);
-        htmlKod+=" <button onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
         return htmlKod;
     }
     else if((startIndex + 1 - articlesPerPage) > 0) //we are far from the lower border => we can go prev
@@ -50,14 +50,14 @@ function navHtml(startIndex, articlesCount, articlesTotalCount){
         
         var prev = startIndex - articlesPerPage;
         //document.write("prev3 :"+prev);
-        htmlKod+=" <button onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
         return htmlKod;
     }
     else
     {
-        htmlKod+=" <button onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
+        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
         return htmlKod;
     }
 }

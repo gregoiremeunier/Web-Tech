@@ -21,7 +21,8 @@ writeArticles2Html(0, articlesPerPage, server, 'clanky', 'navigacia');
  * @returns {string} - HTML code for the navigation part of the page
 
  */
-function navHtml(startIndex, articlesCount, articlesTotalCount){
+function navHtml(startIndex, articlesCount, articlesTotalCount)
+{
     var htmlKod="";
     if(articlesCount>0)
     {

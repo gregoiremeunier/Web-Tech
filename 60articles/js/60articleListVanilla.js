@@ -34,11 +34,9 @@ writeArticles2Html(0, articlesPerPage, server, 'clanky', 'navigacia');
 
 function navHtml(startIndex, articlesCount, articlesTotalCount){
     var htmlCode="";
-    if(articlesCount>0){
-        htmlCode+="Vypisujem články  "+(startIndex+1)+" až "+(startIndex+articlesCount)+" z "+ articlesTotalCount +" článkov. <br />";
+    if(articlesCount>0)
+    {
         htmlCode+="(Displaying articles  "+(startIndex+1)+" to "+(startIndex+articlesCount)+" from "+ articlesTotalCount  +" articles.) <br /> <br />";
-
-
     }
     htmlCode+=" <button onclick=\"writeArticles2Html("+startIndex+
              ", articlesPerPage, server, 'clanky', 'navigacia')\">" +

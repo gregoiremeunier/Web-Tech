@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Zoznam článkov / Article List</title>
+    <title>Articles List</title>
 </head>
 <body>
 <header>
-    <h1>Zoznam článkov / Article List</h1>
+    <h1>Articles List</h1>
 </header>
 <main id="clanky"></main>
 <footer>
@@ -19,8 +19,7 @@
 <script id="listOfArticlesMTemplate" type="text/template">
     {{#articles}}
     <article>
-            <h2><a href="60article.html?id={{id}}">{{title}}</a></h2>
-            <p>{{author}}</p>
+            <p><i>{{author}}</i> write <b><a href="Article.html?id={{id}}">{{title}}</a></b> in {{dateCreated}}</p>        
     </article>
     {{/articles}}
 </script>

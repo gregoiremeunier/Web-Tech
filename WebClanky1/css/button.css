@@ -1,0 +1,123 @@
+body
+
+{
+    background: lightseagreen;
+}
+
+
+a:hover
+
+{
+    cursor: pointer;
+    color:green;
+}
+
+.link-btn
+
+{
+
+    border: solid black 1px;
+    background-color: rgb(235,235,235);
+    font-family: "Times New Roman",sans-serif;
+    font-size: 14px;
+    padding: 5px;
+}
+
+
+.visionbutton
+
+{
+    padding: 5px;
+    margin:10px;
+}
+
+
+#PopupMenu
+{
+    position: fixed;
+    top : 0;
+    left : 0;
+    background-color: rgba(0,0,0,0);
+    height: 100%;
+    width: 100%;
+    display: none;
+
+}
+
+#main_popup
+{
+    position: fixed;
+    height: 80px;
+    width: 400px;
+    border: solid black 2px;
+    background-color: red;
+    border-radius: 5px;
+    left: 52%;
+    margin-left: -200px;
+    top: 42%;
+    margin-top: -250px;
+
+
+
+}
+
+#close_popup
+{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    border: solid black 2px;
+    text-align: center;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    background-color: rgb(234,54,34);
+
+
+
+
+}
+
+#close_popup p
+{
+    margin-top: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+
+
+
+}
+
+
+#DivMenu
+
+{
+    position: absolute;
+    top: 15px;
+    left: 200px;
+    margin: 10px;
+}
+
+#buttondiv
+
+{
+    display: flex;
+}
+
+#navigacia
+
+{
+    margin-top:14px;
+
+
+}
+
+form
+
+{
+    position: absolute;
+    top: 60px;
+
+
+}

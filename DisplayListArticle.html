@@ -65,10 +65,19 @@
 </footer>
 
 <!----------------------------- Mustache template -------------------------------------------------------------------->
-<script id="listArtMT" type="text/template">
+<!--script id="listArtMT" type="text/template">
     {{#articles}}
     <article>
             <p class="text">{{author}} wrote <a href="DisplayArticle.html?id={{id}}">{{title}}</a>. It was written in {{dateCreated}}</p>
+    </article>
+    {{/articles}}
+</script>-->
+<script id="listArtMT" type="text/template">
+    {{#articles}}
+    <article>
+            <h2 class="text"><a href="Article.html?id={{id}}">{{title}}</a></h2>
+            <p class="text">{{author}}</p>
+            Article created on : <p class="text">{{dateCreated}}</p>
     </article>
     {{/articles}}
 </script>

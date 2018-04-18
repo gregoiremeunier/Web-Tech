@@ -59,25 +59,29 @@
 
 
 <footer>
-<nav id="FooTer"></nav>
-  <button class="btn bg-danger" onclick="LowVisionMode()">Low Vision</button>
-  <button class="btn btn-default" onclick="NormalVisionMode()">Normal Vision</button>
+<nav class="FooTer navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Footer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link bg-danger" onclick="LowVisionMode()">Low Vision</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="NormalVisionMode()">Normal Vision</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 </footer>
 
 <!----------------------------- Mustache template -------------------------------------------------------------------->
-<!--script id="listArtMT" type="text/template">
-    {{#articles}}
-    <article>
-            <p class="text">{{author}} wrote <a href="DisplayArticle.html?id={{id}}">{{title}}</a>. It was written in {{dateCreated}}</p>
-    </article>
-    {{/articles}}
-</script>-->
 <script id="listArtMT" type="text/template">
     {{#articles}}
     <article>
-            <h2 class="text"><a href="Article.html?id={{id}}">{{title}}</a></h2>
-            <p class="text">{{author}}</p>
-            Article created on : <p class="text">{{dateCreated}}</p>
+            <p class="text">{{author}} wrote <a href="DisplayArticle.html?id={{id}}">{{title}}</a>. It was written in {{dateCreated}}</p>
     </article>
     {{/articles}}
 </script>
@@ -99,7 +103,9 @@
 
 <!-- BOOTSTRAP -->
 <script type="text/javascript" src="js/gene.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<!--MAKE THE PAGE CRASH -->
+<!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 

@@ -14,7 +14,7 @@ writeArticle2Html("article","comments");
  */
 function errorDialog(status)
 {
-    window.alert("Chyba pri načítaní údajov zo servera.\nStatus= "+status);
+    window.alert("Status= "+status);
 }
 
 

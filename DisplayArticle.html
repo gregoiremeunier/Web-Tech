@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Article</title>
@@ -75,10 +74,26 @@
 <script src="js/article.js"></script>
 
 <footer>
-  <button class="btn bg-danger" onclick="LowVisionMode()">Low Vision</button>
-  <button class="btn btn-default" onclick="NormalVisionMode()">Normal Vision</button>
+<nav class="FooTer navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Footer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link bg-danger" onclick="LowVisionMode()">Low Vision</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="NormalVisionMode()">Normal Vision</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="DisplayListArticle.html">Retourner à la liste des articles</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 </footer>
-
 
 <!-- BOOTSTRAP -->
 <script type="text/javascript" src="js/gene.js"></script>

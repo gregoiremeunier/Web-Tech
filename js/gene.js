@@ -1,29 +1,30 @@
-//tootips
+//---------------------------------------------------------tootips
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 
-//dropdown menu index page
-var dropdown = document.getElementsById("DownTree");
-var i;
-for (i = 0; i < dropdown.length; i++) 
-{
-  dropdown[i].addEventListener("click", 
-    function() 
-    {
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") 
-      {
-        dropdownContent.style.display = "none";
-      } 
-      else 
-      {
-        dropdownContent.style.display = "block";
+//---------------------------------------------------------dropdown menu index page
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function dropDownBtn() {
+    document.getElementById("myDropDown").classList.toggle("showMenu");
+}
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropBtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropDown-Content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('showMenu')) {
+        openDropdown.classList.remove('showMenu');
       }
     }
-  );
+  }
 }
 
+//---------------------------------------------------------fonctions de mal voyance
 function LowVisionMode()
 {
   document.body.style.fontSize = '200%';

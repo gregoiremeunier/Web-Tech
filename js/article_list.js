@@ -1,7 +1,7 @@
 //Code executed after loading this script:
 
 //Number of articles per one page, change the number to the desired number of articles per page
-var articlesPerPage=10;
+var articlesPerPage=20;
 
 //Domain name of the server with the article database
 var server="wt.kpi.fei.tuke.sk"+"/api/article"

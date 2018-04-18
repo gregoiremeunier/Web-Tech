@@ -68,9 +68,7 @@
 <script id="listArtMT" type="text/template">
     {{#articles}}
     <article>
-            <h2 class="text"><a href="DisplayArticle.html?id={{id}}">{{title}}</a></h2>
-            <p class="text">{{author}}</p>
-            Article created on : <p class="text">{{dateCreated}}</p>
+            <p class="text">{{author}} wrote <a href="DisplayArticle.html?id={{id}}">{{title}}</a>. It was written in {{dateCreated}}</p>
     </article>
     {{/articles}}
 </script>

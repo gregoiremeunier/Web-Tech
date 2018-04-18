@@ -4,7 +4,7 @@
 
 //Počet naraz zobrazených článkov
 //Number of articles per one page
-var articlesPerPage=5;
+var articlesPerPage=100;
 
 
 //Doménové meno servera s databázou článkov

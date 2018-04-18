@@ -3,14 +3,28 @@
  */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Kód, ktorý sa vykoná pri načítaní skriptu
 //Code executed when the script is loaded
 
+
+
+//Výpis prvých maximálne articlesPerPage článkov a zápis informácie do navigačného panela
 //Write first articlesPerPage articles to html and create a navigation part
 writeArticles2Html(0, articlesPerPage, server, 'clanky', 'navigacia');
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//funkcie
+
 
 /**
+ * Vráti HTML kód pre navigačnú časť stránky
+ * @param startIndex - index prvého zo zobrazených článkov
+ * @param articlesCount - počet vypísaných článkov
+ * @param articlesTotalCount  - celkový počet článkov v databáze servra
+ * @returns {string} - HTML kód pre navigačnú časť stránky
+ *
  * Creates and returns HTML code for the navigation part of the page
  * @param startIndex - index of the first of the displayed articles
  * @param articlesCount - number of displayed articles
@@ -18,49 +32,28 @@ writeArticles2Html(0, articlesPerPage, server, 'clanky', 'navigacia');
  * @returns {string} - HTML code for the navigation part of the page
  */
 
-function navHtml(startIndex, articlesCount, articlesTotalCount)
-{
-    var htmlKod="";
-    if(articlesCount>0)
-    {
-        htmlKod+="<hr> ";
-        htmlKod+="(Displaying articles  "+(startIndex+1)+" to "+(startIndex+articlesCount)+" from "+ articlesTotalCount  +" articles.) <br /> <br />";
+function navHtml(startIndex, articlesCount, articlesTotalCount){
+    var htmlCode="";
+    if(articlesCount>0){
+        htmlCode+="Vypisujem články  "+(startIndex+1)+" až "+(startIndex+articlesCount)+" z "+ articlesTotalCount +" článkov. <br />";
+        htmlCode+="(Displaying articles  "+(startIndex+1)+" to "+(startIndex+articlesCount)+" from "+ articlesTotalCount  +" articles.) <br /> <br />";
+
+
     }
-    if((startIndex + 1 - articlesPerPage > 0 )&&(startIndex + articlesPerPage < articlesTotalCount)) //we are far from the border => we can go prev and next
-    {
-        var prev = startIndex - articlesPerPage;
-        var next = startIndex + articlesPerPage;
-       // document.write("prev1 :"+prev);
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
-        return htmlKod;
-    }
-    else if((startIndex + articlesPerPage)< articlesTotalCount) //we are far from the upper border => we can go next
-    {
-        var next = startIndex + articlesPerPage;
-        //document.write("next2 :"+next);
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+next+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
-        return htmlKod;
-    }
-    else if((startIndex + 1 - articlesPerPage) > 0) //we are far from the lower border => we can go prev
-    {
-        
-        var prev = startIndex - articlesPerPage;
-        //document.write("prev3 :"+prev);
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+prev+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
-        return htmlKod;
-    }
-    else
-    {
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Prev</button>";
-        htmlKod+=" <button class=\"link-btn\" onclick=\"writeArticles2Html("+startIndex+", articlesPerPage, server, 'clanky', 'navigacia')\">" +"Next</button>";
-        return htmlKod;
-    }
+    htmlCode+=" <button onclick=\"writeArticles2Html("+startIndex+
+             ", articlesPerPage, server, 'clanky', 'navigacia')\">" +
+             "Načítaj znova</button>";
+    return htmlCode;
 }
 
 /**
+ * Zapíše autorov a názvy článkov do daného html elementu
+ * @param articles  - pole objektov s článkami
+ * @param articlesElmId - Id elementu do ktorého sa články majú vypísať
+ * @param navElmId - Id elementu ktorý má obsahovať navigačné linky
+ * @param startIndex - index (poradové číslo čláanku od 0) od ktorého sa články vypisujú
+ * @param max - maximálny počet článkov.
+ *
  * Writes authors and article names to the html element
  * @param articles - array of objects with articles
  * @param articlesElmId - Id of the element to  the articles are to be added
@@ -78,7 +71,13 @@ function renderListOfArticles(articles, articlesElmId, navElmId, startIndex, max
     }
 }
 
+
+
+
 /**
+ * otvori dialogove okno s chybovym hlasenim
+ * @param status -  hodnota XMLHttpRequest.status
+ *
  * Opens a dialog window with an error message
  * @param status -  value os XMLHttpRequest.status
  */
@@ -87,6 +86,13 @@ function errorDialog(status){
 }
 
 /**
+ * Zapíše údaje o článkoch do elementu s id articlesElmId a HTML kód navigácie do elementu s id navElmId
+ * @param startIndex - index (poradové číslo čláanku od 0) od ktorého sa články vypisujú
+ * @param max - maximálny počet článkov.
+ * @param server - doménové meno servera odkiaľ sa majú údaje stiahnuť.
+ * @param articlesElmId - Id elementu do ktorého sa články majú vypísať
+ * @param navElmId - Id elementu ktorý má obsahovať navigačné linky
+ *
  * Writes article data to the element with id=articlesElmId and HTML code for the navigation part to the element with id=navElmId
  * @param startIndex - index of the first article that is displayed. Articles are indexed from 0
  * @param max - maximum number of the displayed articles

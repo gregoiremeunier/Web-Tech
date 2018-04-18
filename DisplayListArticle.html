@@ -10,7 +10,6 @@
 <body>
 <header>
     <h1>Articles List</h1>
-</header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="#">My Tree</a>
@@ -39,65 +38,63 @@
         </div>
       </li>
     </ul>
+    <form class="" action="#" id="search_form" >
+      <input id="search_value" type="text" class="text-search" placeholder="Search here..." required>
+      <select id="search_parameter" required>
+        <option id="author" value="author">Author</option>
+        <option id="content" value="content">Content</option>
+        <option id="title" value="title">Title</option>
+        <option id="tag" value="tag">Tag</option>
+      </select>
+      <input type="button" value="Search" onclick="Article_Search()" class="submit-search btn">
+      <input type="button" value="Reset" onclick="Clear_Search()" class="reset-search btn">
+    </form>
   </div>
 </nav>
 
+</header>
+
+
 <main id="clanky"></main>
+
+
 <footer>
-    <nav id="navigacia"></nav>
+<nav id="FooTer"></nav>
+  <button class="btn bg-danger" onclick="LowVisionMode()">Low Vision</button>
+  <button class="btn btn-default" onclick="NormalVisionMode()">Normal Vision</button>
 </footer>
 
-
 <!----------------------------- Mustache template -------------------------------------------------------------------->
-
-<script id="listOfArticlesMTemplate" type="text/template">
+<script id="listArtMT" type="text/template">
     {{#articles}}
     <article>
-            <p><i>{{author}}</i> write <b><a href="DisplayArticle.html?id={{id}}">{{title}}</a></b> in {{dateCreated}}</p>        
+            <h2 class="text"><a href="DisplayArticle.html?id={{id}}">{{title}}</a></h2>
+            <p class="text">{{author}}</p>
+            Article created on : <p class="text">{{dateCreated}}</p>
     </article>
     {{/articles}}
 </script>
 
-<!----------------------------- JavaScript ---------------------------------------------------------------------------->
+<!------------------------------------------------------ JavaScript ---------------------------------------------------------------------------->
 
 <!-------------------------------------------->
-<!--Spolocne / Common -->
+<!--Common-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 <script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
 
-<script src="js/60settings.js"></script>
-
-<!-------------------------------------------->
-<!--Vanilla JS verzia / version -->
-
-
-<script src="js/mustacheRenderer.js"></script>
-<script src="js/ajajCallsVanilla.js"></script>
-<script src="js/60articleListVanilla.js"></script>
-
-
-
-<!-------------------------------------------->
-<!--jQuery verzia  / version -->
-
-<!--CDN link: https://code.jquery.com/-->
-<!--
 <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
-<script src="js/60articleListJQuery.js"></script>
--->
-
-
-
+<script src="js/article_list.js"></script>
 
 <!-- BOOTSTRAP -->
 <script type="text/javascript" src="js/gene.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>

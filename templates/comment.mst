@@ -1,0 +1,36 @@
+<h1>
+Comments
+</h1>
+
+{{#comments}}
+<article>
+<header>
+<hr>
+
+
+<b>Comment</b>:
+{{text}}
+</p>
+
+<p>
+<b>Date created</b>:
+{{dateCreated}}
+</p>
+<p>
+
+
+<p>
+<b>Last updated</b>:
+{{lastUpdated}}
+</p>
+
+<p>
+<b>Author</b>:
+{{author}}
+</p>
+</header>
+</article>
+
+
+{{/comments}}
+

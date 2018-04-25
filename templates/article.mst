@@ -1,12 +1,12 @@
-		<article>
-		    <header>
-		        <h1 class="art_title">{{title}}</h1>
-		    </header>
+<article>
+    <header>
+        <h1 class="art_title">{{title}}</h1>
+    </header>
 
-		    <p>{{article.content}}</p>
-		    <p>Author: {{author}}</p>
-		    <p> Created on: {{dateCreated}}</p>
-		    <p> Last updated on: {{lastUpdated}}</p>
-		    <img alt="Image" src={{imageLink}}>
-		    <p> {{tags}} </p>
-		</article>
+    <p>{{{content}}}</p>
+    <p>Author: {{author}}</p>
+    <p> Created on: {{dateCreated}}</p>
+    <p> Last updated on: {{lastUpdated}}</p>
+    <img alt="Image" src={{imageLink}}>
+    <p> {{tags}} </p>
+</article>

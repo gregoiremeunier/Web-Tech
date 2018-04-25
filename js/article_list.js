@@ -111,7 +111,7 @@ function JSON2Html(articles, articlesElmId, navElmId, startIndex, max)
  */
 function errorDialog(status)
 {
-    window.alert("Chyba pri načítaní údajov zo servera/Error when reading server data.\nStatus= "+status);
+    window.alert("Error when reading server data.\nStatus= "+status);
 }
 
 /**

@@ -35,8 +35,8 @@ function writeArticle2Html(articleElmId,comments)
             success: function (article) {
                 $.get("templates/article.mst",      //get() je vlastne specialna verzia ajax()
                     function (template) {
-                        $("#" + articleElmId).html(Mustache.render(template, article) + article.content);
-                    }// article.content to remove the html tags
+                        $("#" + articleElmId).html(Mustache.render(template, article));
+                    }
                     ,"text")
             },
             error:function(responseObj,textStatus, errorThrown){

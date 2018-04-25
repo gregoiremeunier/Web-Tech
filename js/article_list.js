@@ -174,13 +174,13 @@ function writeArticles2Html(startIndex, max, server, articlesElmId, navElmId, fo
     });
 }
 
-//<--When reaches the botton loads more pages>-->//
+//When reaches the botton => loads more pages
 $(window).scroll(function() 
 {
     //si le scroll implique qu'on descend dans le domaine du non visible en bas de la page
     if($(window).scrollTop() == $(document).height() - $(window).height()) 
     {
-        scrolldown();
+        scrolldown(); //appel fonction
     }
 });
 
@@ -195,10 +195,10 @@ function scrolldown()
 function Article_Search()
 {
     var tmp_svr = server;
-    var param = document.getElementById("search_parameter").value;
-    var value = document.getElementById("search_value").value;
-    var tmp_svr = server + "?"+param+"="+value;
-    writeArticles2Html(0, articlesPerPage, tmp_svr, 'clanky', 'navigacia','FooTer');
+    var para = document.getElementById("search_parameter").value;
+    var val = document.getElementById("search_value").value;
+    var tmp_svr = server + "?"+para+"="+val; //cherche les articles qui corresponde à la valeur demandée
+    writeArticles2Html(0, articlesPerPage, tmp_svr, 'clanky', 'navigacia','FooTer'); //affiche les articles s'ils existent
 }
 
 function Clear_Search()

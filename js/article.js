@@ -32,9 +32,11 @@ function writeArticle2Html(articleElmId,comments)
             type: 'GET',
             url: "http://"+server+"/api/article/"+artId,
             dataType: "json",
-            success: function (article) {
-                $.get("templates/article.mst",      //get() je vlastne specialna verzia ajax()
-                    function (template) {
+            success: function (article) 
+            {
+                $.get("templates/article.mst", //get()
+                    function (template) 
+                    {
                         $("#" + articleElmId).html(Mustache.render(template, article));
                     }
                     ,"text")
@@ -55,7 +57,8 @@ function writeArticle2Html(articleElmId,comments)
             {
                 $.get("templates/comment.mst",
                     /*                    comment.comments = comment.comments.join();*/
-                    function (template) {
+                    function (template) 
+                    {
 
                         $("#"+comments).html(Mustache.render(template, article));
                     }

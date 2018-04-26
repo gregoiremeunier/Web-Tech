@@ -187,7 +187,7 @@ $(window).scroll(function()
 //on ré-execute le code avec +3 article par page
 function scrolldown() 
 {
-    articlesPerPage+= articlesPerPage+3;
+    articlesPerPage = articlesPerPage + 3; //add 3 articles each time you go down
     writeArticles2Html(0, articlesPerPage, server, 'clanky', 'navigacia', 'FooTer');
 }
 

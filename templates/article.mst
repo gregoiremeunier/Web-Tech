@@ -3,10 +3,10 @@
         <h1 class="art_title">{{title}}</h1>
     </header>
 
-    <p>{{{content}}}</p>
-    <p>Author: {{author}}</p>
-    <p> Created on: {{dateCreated}}</p>
-    <p> Last updated on: {{lastUpdated}}</p>
+    <p><b>Content:</b> {{{content}}}</p>
+    <p><b>Author:</b> {{author}}</p>
+    <p><b>Created on:</b> {{dateCreated}}</p>
+    <p><b>Last updated on:</b> {{lastUpdated}}</p>
     <img alt="Image" src={{imageLink}}>
     <p> {{tags}} </p>
 </article>

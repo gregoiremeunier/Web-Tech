@@ -1,0 +1,8 @@
+    {{#articles}}
+    <article>
+            <h2><a href="article.html?id={{id}}">{{title}}</a></h2>
+            <p>{{author}}</p>
+            <p>{{dateCreated}}</p>
+
+    </article>
+    {{/articles}}

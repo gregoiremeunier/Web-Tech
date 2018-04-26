@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+    <h1>Articles List</h1>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">My Tree</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AddArticle.html">Add an article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AddComment.html">Add a comment</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="DownTree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Articles
+        </a>
+        <div class="dropdown-menu hiddenMenu">
+          <a class="dropdown-item" href="article1.html">Facebook</a>
+          <a class="dropdown-item" href="article2.html">Twitter</a>
+          <a class="dropdown-item" href="article3.html">Snapchat</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</br>
+<form class="" action="#" id="search_form" >
+  <input id="search_value" type="text" class="text-search" placeholder="Search here..." required>
+  <select id="search_parameter" required size="4">
+    <option id="author" value="author">Author</option>
+    <option id="content" value="content">Content</option>
+    <option id="title" value="title">Title</option>
+    <option id="tag" value="tag">Tag</option>
+  </select>
+  <input type="button" value="Search" onclick="Article_Search()" class="submit-search btn">
+  <input type="button" value="Reset" onclick="Clear_Search()" class="reset-search btn">
+</form>
+</br>
+
+</header>
+
+
+<main id="clanky"></main>
+
+
+<footer class="fixed-bottom">
+<nav class="FooTer navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Click to go up</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link bg-danger" onclick="LowVisionMode()">Low Vision</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" onclick="NormalVisionMode()">Normal Vision</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</footer>
+
+<!----------------------------- Mustache template -------------------------------------------------------------------->
+<script id="listArtMT" type="text/template">
+    {{#articles}}
+    <article>
+            <p class="text">{{author}} wrote <a href="DisplayArticle.html?id={{id}}">{{title}}</a>. It was written in {{dateCreated}}</p>
+    </article>
+    {{/articles}}
+</script>
+
+<!------------------------------------------------------ JavaScript ---------------------------------------------------------------------------->
+
+<!-------------------------------------------->
+<!--Common-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+<script src="js/article_list.js"></script>
+
+<!-- BOOTSTRAP -->
+<script type="text/javascript" src="js/gene.js"></script>
+
+<!--MAKE THE PAGE CRASH -->
+<!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

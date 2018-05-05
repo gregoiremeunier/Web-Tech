@@ -23,7 +23,6 @@ if (isFinite(artId))
             errorAlert("article loading failed.",xhr);
         }
     );
-    
 }
 else //s'il n'y a pas d'ID donc on veut ajouter un nouvel article
 {

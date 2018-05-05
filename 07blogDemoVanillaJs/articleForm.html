@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Article FORM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header>
+    <h1 id="frmTitle">Add Article</h1>
+</header>
+
+<main>
+    <form id="SKorFrm" method="post" action="badProcessing.html">
+        <label for="author">Autor / Author:</label>
+        <input type="text" name="author" id="author" size="50" title="Autor článku, maximálna dĺžka: 100 znakov (article author, max. length 100 characters)." maxlength="100" placeholder="napr. Ján Trieska" />
+        <br>
+        <label for="title">Názov / Title:</label>
+        <input type="text" name="title" id="title" size="50"  maxlength="100" pattern="\S[\S\s]*" required title="Názov článku, povinná položka, maximálna dĺžka: 100 znakov, prvý znak nesmie byť medzera (Article title, mandatory item, max. length: 100 characters, the first character must not be a space)." placeholder="napr. Môj prvý príbeh / e.g. My story." />
+        <!--
+        \s =  match any white space character
+        \S =  match any non-white space character
+        -->
+        <br>
+        <label for="imageLink">Obrázok / Image (url):</label>
+        <input type="url" name="imageLink" id="imageLink" size="50" title="URL obrázka. Maximálna dĺžka: 100 znakov (image URL, max. length 100 characters)." maxlength="100"/>
+        <br>
+        <label></label><button type="button" id="btShowFileUpload">Nahraj obrázok / Upload image</button>
+
+        <fieldset class="added skryty" id="fsetFileUpload">
+            <legend>Nahranie obrázka / Image Upload</legend>
+            <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+            <button type="button" id="btFileUpload">Odošli obrázok na server / Send image to server</button>
+            <button type="button" id="btCancelFileUpload">Zruš nahrávanie / Cancel uploading</button>
+        </fieldset>
+
+
+        <br>
+        <label for="content">Text článku / Article content:</label>
+        <textarea name="content" id="content" spellcheck="true" lang="sk" cols="50" rows="20" required title="Obsah článku, povinná položka,  môže byť obyčajný text alebo html (Article content, mandatory item, can be plain text or in HTML)."></textarea>
+        <br>
+        <label for="tags">Kľúčové slová / Keywords:</label>
+        <input type="text" name="tags" id="tags" size="50" title="Zoznam kľúčových slov oddelených čiarkou (Keyword list, comma separated)." placeholder="napr. dedina, dráma / e.g. village, drama" />
+
+        <br>
+        <br>
+        <button type="button" id="btBack">
+            Späť / Back
+        </button>
+        <button type="reset">
+            Reset
+        </button>
+        <button type="submit">
+            Ulož článok / Save article
+        </button>
+
+
+    </form>
+
+</main>
+
+
+<!-- Common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+<script src="js/common/settings.js"></script>
+<script src="js/common/messages.js"></script>
+<script src="js/common/ajaxCalls.js"></script>
+<script src="js/common/mustacheRenderer.js"></script>
+<script src="js/common/queryStringProcessing.js"></script>
+<script src="js/common/formProcessing.js"></script>
+
+<script src="js/articleForm.js"></script>
+
+</body>
+</html>

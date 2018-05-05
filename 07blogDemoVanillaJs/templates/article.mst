@@ -1,0 +1,15 @@
+        <article>
+            <header>
+                <h1>{{title}}</h1>
+               <p>{{author}} ({{dateCreated}})</p>
+               <hr>
+            </header>
+            {{#imageLink}}
+            <figure>
+            <img src="{{imageLink}}" alt="article figure" />
+            </figure>
+            {{/imageLink}}
+            <div id="content">
+            {{{content}}}
+            </div>
+        </article>

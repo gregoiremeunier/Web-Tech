@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Článok / Article</title>
+
+    <link rel="stylesheet" href="css/normalize.css" media="screen" />
+    <link rel="stylesheet"
+          href="css/blogStyleBasic.css"
+          media="screen" />
+</head>
+<body>
+<main class="colored">
+    <div  id="article"></div>
+    <br>
+    <nav class="tlacidla">
+        <button id="btArtList" >
+            Zoznam článkov / Article list
+        </button>
+        <button id="btUpdate">
+            Uprav článok / Edit article
+        </button>
+        <button id="btDelete">
+            Vymaž článok / Delete article
+        </button>
+    </nav>
+</main>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/libs/mustache.min.js"><\/script>')</script>
+
+<script src="js/common/settings.js"></script>
+<script src="js/common/messages.js"></script>
+<script src="js/common/mustacheRenderer.js"></script>
+<script src="js/common/ajaxCalls.js"></script>
+<script src="js/common/queryStringProcessing.js"></script>
+<script src="js/common/formProcessing.js"></script>
+
+<script src="js/article.js"></script>
+
+
+</body>
+</html>
+

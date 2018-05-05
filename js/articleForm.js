@@ -1,3 +1,8 @@
+//load summernote
+$(document).ready(function() {
+  $('#summernote').summernote();
+});
+
 // Code executed when the script is loaded
 var form = document.getElementById("SKorFrm");
 var artId = queryString2obj().id;
@@ -14,9 +19,9 @@ if (isFinite(artId))
             document.getElementById("author").value=article.author;
             document.getElementById("title").value=article.title;
             document.getElementById("imageLink").value=article.imageLink;
-            document.getElementById("content").value=article.content;
+            document.getElementById("summernote").value=article.summernote;
             document.getElementById("tags").value=article.tags;
-            document.getElementById("frmTitle").innerHTML="Edit article";
+            document.getElementById("frmTitle").innerHTML="Edit article n°"+artId;
         },
         function(xhr)
         {
@@ -25,9 +30,9 @@ if (isFinite(artId))
     );
     
 }
-else //s'il n'y a pas d'ID donc qu'on veut ajouter un nouvel article
+else //s'il n'y a pas d'ID donc on veut ajouter un nouvel article
 {
-    document.getElementById("frmTitle").innerHTML="Add article";
+    document.getElementById("frmTitle").innerHTML="Add new article";
 }
 
 //Adding functionality for the button "Back"
@@ -107,7 +112,7 @@ function prepareAndSendArticle(form, method, restURL)
         alert("Article title has to be entered and has to contain readable characters only.");
         return;
     }
-    if(!data.content)
+    if(!data.summernote)
     { //this is important, checks whether the user entered only white space characters.
         alert("Article content has to be entered and has to contain readable characters only.");
         return;

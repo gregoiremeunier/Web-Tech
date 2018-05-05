@@ -100,14 +100,14 @@ function deleteArticle(sourceURL)
             {
                 var status = xhr.status;
                 console.log(status + " " + xhr.statusText + " " + xhr.responseText);
-                if (status == 204) 
-                { //204 = no content
-                    window.alert("article successfully deleted.");
+                if (status == 204) //204 = no content
+                { 
+                    window.alert("Article successfully deleted.");
                     window.location.href = "DisplayListArticle.html";
                 }
                 else
                 {
-                    errorAlert("delete failed.",xhr);
+                    errorAlert("Delete failed.",xhr);
                 }
             }
         );

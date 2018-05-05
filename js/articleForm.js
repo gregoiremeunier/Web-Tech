@@ -30,8 +30,6 @@ else //s'il n'y a pas d'ID donc qu'on veut ajouter un nouvel article
     document.getElementById("frmTitle").innerHTML="Add article";
 }
 
-
-
 //Adding functionality for the button "Back"
 document.getElementById("btBack").addEventListener("click", function(){
     window.history.back()
@@ -57,7 +55,6 @@ document.getElementById("btShowFileUpload").addEventListener("click", function()
     document.getElementById('fsetFileUpload').classList.remove("skryty");
     document.getElementById('btShowFileUpload').classList.add("skryty");
 });
-
 
 //Adding functionality for the button "Send image to server"
 document.getElementById("btFileUpload").addEventListener("click", function()
@@ -112,14 +109,12 @@ function prepareAndSendArticle(form, method, restURL)
     }
     if(!data.content)
     { //this is important, checks whether the user entered only white space characters.
-        alert("Article content has to be entered and has to contain readable characters only");
+        alert("Article content has to be entered and has to contain readable characters only.");
         return;
     }
 
     console.log("prepareAndSendArticle> Form data validated.");
 
-
-    //4. odoslanie údajov
     //4. sending the data
     if(window.confirm("Do you really wish to upload the article?"))
     {
@@ -135,7 +130,7 @@ function prepareAndSendArticle(form, method, restURL)
                         console.log(response.id);
                         window.location.href="DisplayArticle.html?id="+response.id;
                     }
-                    console.log("Spracovanie úspešné. Údaje boli zapísané");
+                    console.log("I don't know what it is but somehow a problem");
                 }
                 else if(status==202)
                 { //(successful processing but upload not finished)
@@ -143,7 +138,7 @@ function prepareAndSendArticle(form, method, restURL)
                 }
                 else
                 {
-                    errorAlert("Zapísanie článku zlyhalo (article uploading failed).",xhr);
+                    errorAlert("article uploading failed.",xhr);
 
                 }
                 console.log(status+" "+xhr.statusText+" "+xhr.responseText);
@@ -159,7 +154,8 @@ function prepareAndSendArticle(form, method, restURL)
  * @param $btShowFileUploadElement - id of the button type="button" element, which shows or hides the fieldset
  * @param files - a FileList object with the image to be uploaded as the first item.
  */
-function uploadImg(imgLinkElement,fieldsetElement, btShowFileUploadElement, files) {
+function uploadImg(imgLinkElement,fieldsetElement, btShowFileUploadElement, files) 
+{
     if (files.length>0)
     {
         var imgData = new FormData();

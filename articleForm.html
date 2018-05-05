@@ -1,64 +1,81 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Article FORM</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 <header>
     <h1 id="frmTitle">Sera changé par le articleForm.js</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">My Tree</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="articleForm.html">Add/Edit an article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="AddComment.html">Add a comment</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="DownTree"" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="DisplayListArticle">
+          List Articles
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" class="hiddenMenu">
+          <a class="dropdown-item" href="article1.html">Facebook</a>
+          <a class="dropdown-item" href="article2.html">Twitter</a>
+          <a class="dropdown-item" href="article3.html">Snapchat</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 </header>
 
 <main>
-    <form id="SKorFrm" method="post" action="badProcessing.html">
-        <label for="author">Autor / Author:</label>
-        <input type="text" name="author" id="author" size="50" title="Autor článku, maximálna dĺžka: 100 znakov (article author, max. length 100 characters)." maxlength="100" placeholder="napr. Ján Trieska" />
-        <br>
-        <label for="title">Názov / Title:</label>
-        <input type="text" name="title" id="title" size="50"  maxlength="100" pattern="\S[\S\s]*" required title="Názov článku, povinná položka, maximálna dĺžka: 100 znakov, prvý znak nesmie byť medzera (Article title, mandatory item, max. length: 100 characters, the first character must not be a space)." placeholder="napr. Môj prvý príbeh / e.g. My story." />
-        <!--
-        \s =  match any white space character
-        \S =  match any non-white space character
-        -->
-        <br>
-        <label for="imageLink">Obrázok / Image (url):</label>
-        <input type="url" name="imageLink" id="imageLink" size="50" title="URL obrázka. Maximálna dĺžka: 100 znakov (image URL, max. length 100 characters)." maxlength="100"/>
-        <br>
-        <label></label><button type="button" id="btShowFileUpload">Nahraj obrázok / Upload image</button>
 
-        <fieldset class="added skryty" id="fsetFileUpload">
-            <legend>Nahranie obrázka / Image Upload</legend>
-            <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
-            <button type="button" id="btFileUpload">Odošli obrázok na server / Send image to server</button>
-            <button type="button" id="btCancelFileUpload">Zruš nahrávanie / Cancel uploading</button>
-        </fieldset>
+<form class="form form-grid" id="SKorFrm" method="post" action="badProcessing.html">
+    <br>
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" size="50" title="Article author, max. length 100 characters." data-toggle="tooltip" maxlength="100" placeholder="Author of the article" required /><br>
+    
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" size="50"  maxlength="100" pattern="[a-zA-Z0-9À-ž\s]+" required title="You should use letters and numbers. Required" placeholder="Title of the article" data-toggle="tooltip"/><br>
 
+    <label for="content">Article content:</label>
+    <textarea name="content" id="content" spellcheck="true" cols="60" rows="20" required title="Article content. Required. Can be plain text or in HTML." data-toggle="tooltip" placeholder="Write here your article please."></textarea><br>
 
-        <br>
-        <label for="content">Text článku / Article content:</label>
-        <textarea name="content" id="content" spellcheck="true" lang="sk" cols="50" rows="20" required title="Obsah článku, povinná položka,  môže byť obyčajný text alebo html (Article content, mandatory item, can be plain text or in HTML)."></textarea>
-        <br>
-        <label for="tags">Kľúčové slová / Keywords:</label>
-        <input type="text" name="tags" id="tags" size="50" title="Zoznam kľúčových slov oddelených čiarkou (Keyword list, comma separated)." placeholder="napr. dedina, dráma / e.g. village, drama" />
+    <label for="tags">Keywords:</label>
+    <input type="text" name="tags" id="tags" size="50" title="Keyword list. A comma separate the keyword." data-toggle="tooltip" placeholder="ex: youtube, facebook" /><br>
 
-        <br>
-        <br>
-        <button type="button" id="btBack">
-            Späť / Back
-        </button>
-        <button type="reset">
-            Reset
-        </button>
-        <button type="submit">
-            Ulož článok / Save article
-        </button>
+    <label for="imageLink">Image (url):</label>
+    <input type="url" name="imageLink" id="imageLink" size="50" title="Image URL, max. length 100 characters." data-toggle="tooltip" maxlength="100"/><br>
+    
+    <button class="btn" type="button" id="btShowFileUpload">Upload image</button>
 
+    <fieldset class="added skryty" id="fsetFileUpload">
+        <legend>Image Upload</legend>
+        <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+        <button class="btn" type="button" id="btFileUpload">Send image to server</button>
+        <button class="btn" type="button" id="btCancelFileUpload">Cancel uploading</button>
+    </fieldset><br><br>
 
-    </form>
+    <button class="btn" type="button" id="btBack">Back</button>
+    <button class="btn" type="reset">Reset</button>
+    <button class="btn" type="submit">Save article</button>
+</form>
 
 </main>
 
@@ -75,6 +92,12 @@
 <script src="js/common/formProcessing.js"></script>
 
 <script src="js/articleForm.js"></script>
+
+<!-- BOOTSTRAP -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/gene.js"></script>
 
 </body>
 </html>

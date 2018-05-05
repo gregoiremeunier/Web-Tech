@@ -1,8 +1,3 @@
-//load summernote
-$(document).ready(function() {
-  $('#summernote').summernote();
-});
-
 // Code executed when the script is loaded
 var form = document.getElementById("SKorFrm");
 var artId = queryString2obj().id;
@@ -19,7 +14,7 @@ if (isFinite(artId))
             document.getElementById("author").value=article.author;
             document.getElementById("title").value=article.title;
             document.getElementById("imageLink").value=article.imageLink;
-            document.getElementById("summernote").value=article.summernote;
+            document.getElementById("content").value=article.content;
             document.getElementById("tags").value=article.tags;
             document.getElementById("frmTitle").innerHTML="Edit article n°"+artId;
         },
@@ -112,7 +107,7 @@ function prepareAndSendArticle(form, method, restURL)
         alert("Article title has to be entered and has to contain readable characters only.");
         return;
     }
-    if(!data.summernote)
+    if(!data.content)
     { //this is important, checks whether the user entered only white space characters.
         alert("Article content has to be entered and has to contain readable characters only.");
         return;

@@ -2,6 +2,7 @@
 var form = document.getElementById("SKorFrm");
 var artId = queryString2obj().id;
 
+//récupére et affiche les infos sur l'article s'il y a un id (cad qu'on veut éditer)
 if (isFinite(artId)) 
 {
     console.log("Edit article "+artId);
@@ -24,7 +25,7 @@ if (isFinite(artId))
     );
     
 }
-else
+else //s'il n'y a pas d'ID donc qu'on veut ajouter un nouvel article
 {
     document.getElementById("frmTitle").innerHTML="Add article";
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="739447374919-iij0b3qqlnaa4eidj70m2k543n4j3675.apps.googleusercontent.com">
+
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <title>Google SingIn - simple Use</title>
+</head>
+<body>
+<h1>Google SingIn - simple Use</h1>
+
+<!--div class="g-signin2" data-onsuccess="renderUserInfo" data-gapiscan="true" data-onload="true"></div-->
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+
+
+<br>
+<!--button onclick="signOut()">Sign out</button-->
+
+<div id="userStatus"></div>
+
+
+<script src="gs.js"></script>
+
+</body>
+</html>

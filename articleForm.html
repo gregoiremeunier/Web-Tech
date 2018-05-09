@@ -54,6 +54,22 @@
 <button id="btn_signOut" class="btn" onclick="signOut()">Sign out</button>
 <br/>
 
+<!--FACEBOOK LOGIN -->
+<div id="fb-root"></div>
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+<div id="test-fb"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.0&appId=170839713626699';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- END FACEBOOK LOGIN -->
+<br/>
+
 <form class="form form-grid" id="SKorFrm" method="post" action="badProcessing.html">
     <br>
     <label for="author">Author:</label>

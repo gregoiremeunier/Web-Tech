@@ -1,6 +1,18 @@
 var auth2 = {};
 document.getElementById("btn_signOut").innerHTML="Not connected.";
 
+document.getElementById("author").onclick = function() {facebookAuthor()};
+
+//when you click on author input, if somebody is connected, it displays his/her name
+function facebookAuthor()
+{
+  FB.api('/me', function(response) 
+  {
+    rep = JSON.stringify(response.name);
+  });
+  document.getElementById("author").value=rep;//problème avec non connecté non géré
+}
+
 //affichage du nom dans le input articleForm Author
 function displayAuthorInput(googleUser)
 {
@@ -17,6 +29,10 @@ function signOut()
     document.getElementById("btn_signOut").innerHTML="User signed out.";
   });
 }
+
+
+
+
 
 // NOT NEEDED FOR US
 // function renderUserInfo(googleUser)

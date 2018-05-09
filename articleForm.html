@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Article FORM</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="add.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Article FORM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="add.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Google Sign In-->
+  <meta name="google-signin-client_id" content="540551300575-tbo4bc1qateh6mvhhrf7sbn92nsmjfk9.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -46,6 +49,11 @@
 </header>
 
 <main>
+<br/>
+<div id="btn_co" class="g-signin2" data-onsuccess="displayAuthorInput"></div>
+<button id="btn_signOut" class="btn" onclick="signOut()">Sign out</button>
+<br/>
+
 <form class="form form-grid" id="SKorFrm" method="post" action="badProcessing.html">
     <br>
     <label for="author">Author:</label>
@@ -92,6 +100,9 @@
 <script src="js/common/formProcessing.js"></script>
 
 <script src="js/articleForm.js"></script>
+
+<!-- Google Sign In-->
+<script src="Google_SignIn/gs.js"></script>
 
 <!--Summernote-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 

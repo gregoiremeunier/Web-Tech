@@ -6,10 +6,13 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Google Sign In-->
+  <meta name="google-signin-client_id" content="540551300575-tbo4bc1qateh6mvhhrf7sbn92nsmjfk9.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
+<header>
 <h1>The blog on socials networks :</h1>
-
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="#">My Tree</a>
@@ -44,21 +47,27 @@
   </div>
 </nav>
 
+</header>
+
+<main>
 <div class="menu">
   My Trees <br/>
   <div class="dropDown">
-  <button onclick="dropDownBtn()" class="dropBtn">Articles</button>
-  <div id="myDropDown" class="dropDown-Content">
-    <a href="article1.html">Facebook</a>
-    <a href="article2.html">Twitter</a>
-    <a href="article3.html">Snapchat</a>
+    <button onclick="dropDownBtn()" class="dropBtn">Articles</button>
+    <div id="myDropDown" class="dropDown-Content">
+      <a href="article1.html">Facebook</a>
+      <a href="article2.html">Twitter</a>
+      <a href="article3.html">Snapchat</a>
+    </div>
   </div>
-</div>
 
-  <!--button id="MenuB" onclick="displayHideMenu()">Articles</button>
-    <nav id=""> </nav>-->
+
 
   <br/><br/><br/><br/><br/><br/><br/><br/>
+  <br/>
+  <div id="btn_co" class="g-signin2" data-onsuccess="displayAuthorInput"></div>
+  <button id="btn_signOut" class="btn" onclick="signOut()">Sign out</button>
+  <br/>
   <a href="Google_SignIn/google.html" target="_top">Google</a><br/>
   <!--<a href="AddComment.html" target="_top">Add a comment</a><br/>-->
   <a href="SiteMap.html" target="_top">SITE MAP</a><br/>
@@ -99,7 +108,7 @@
     </fieldset>
   </form>
 </div>
-
+</main>
 
 
 <footer>
@@ -114,6 +123,9 @@
   <button class="btn bg-danger" onclick="LowVisionMode()">Low Vision</button>
   <button class="btn btn-default" onclick="NormalVisionMode()">Normal Vision</button>
 </footer>
+
+<!-- Google Sign In-->
+<script src="Google_SignIn/gs.js"></script>
 
 <!-- BOOTSTRAP -->
 <script type="text/javascript" src="js/gene.js"></script>

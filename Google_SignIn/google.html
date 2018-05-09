@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Google SignIn</title>
+	<link rel="stylesheet" href="style.css">
+ 	<link rel="stylesheet" href="css/bootstrap.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="540551300575-ioldhaf2ri4k8ctfaaug047qhf0uga8q.apps.googleusercontent.com">
-
-
+    <!--Google Sign In-->
+    <meta name="google-signin-client_id" content="540551300575-tbo4bc1qateh6mvhhrf7sbn92nsmjfk9.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-    <title>Google SingIn</title>
 </head>
 <body>
-<h1>Google SingIn</h1>
+<h1>Google SignIn</h1>
+
 
 <div class="g-signin2" data-onsuccess="renderUserInfo"></div>
 
 <!--div class="g-signin2" data-onsuccess="onSignIn"></div-->
 
 
-<div id="htmlElmId"></div>
+<div id="htmlElmId">Coucou</div>
+<label for="author">Author:</label>
+<input type="text" name="author" id="author" size="50" title="Article author, max. length 100 characters." data-toggle="tooltip" maxlength="100" placeholder="Author of the article" required /><br>
 
 <br>
 <button onclick="signOut()">Sign out</button>

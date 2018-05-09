@@ -64,31 +64,6 @@
 
 
   <br/><br/><br/><br/><br/><br/><br/><br/>
-  <br/>
-  <!--GOOGLE LOGIN -->
-  <div id="btn_co" class="g-signin2" data-onsuccess="displayAuthorInput"></div>
-  <button id="btn_signOut" class="btn" onclick="signOut()">Sign out</button>
-  <br/>
-  <!--END GOOGLE LOGIN -->
-  <!--FACEBOOK LOGIN -->
-  <div id="fb-root"></div>
-  <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-  <div id="test-fb"></div>
-  <script>
-    (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.0&appId=170839713626699';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-    FB.api('/me', function(response) 
-  {
-    rep = JSON.stringify(response.name);
-  });
-  </script><br/>
-  <!-- END FACEBOOK LOGIN -->
-
   <!--<a href="AddComment.html" target="_top">Add a comment</a><br/>-->
 
   <a href="Google_SignIn/google.html" target="_top">Google</a><br/>

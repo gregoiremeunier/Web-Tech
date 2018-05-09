@@ -55,7 +55,8 @@ function writeArticle2Html(articleElmId,comments)
                     }
                     ,"text")
             },
-            error:function(responseObj,textStatus, errorThrown){
+            error:function(responseObj,textStatus, errorThrown)
+            {
                 errorDialog(textStatus+"("+errorThrown+")");
             }
         });

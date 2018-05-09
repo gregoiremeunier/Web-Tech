@@ -13,7 +13,8 @@
 
 <body>
 <header>
-    <h1 id="frmTitle">Sera changé par le articleForm.js</h1>
+<h1 id="frmTitle">Sera changé par le commentsForm.js</h1>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="#">My Tree</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,11 +25,11 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="articleForm.html">Add/Edit an article</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AddComment.html">Add a comment</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="commentsForm.html">Add/Edit a comment</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="DownTree"" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="DisplayListArticle">
@@ -48,29 +49,11 @@
 <main>
 <form class="form form-grid" id="SKorFrm" method="post" action="badProcessing.html">
     <br>
-    <label for="author">Author:</label>
-    <input type="text" name="author" id="author" size="50" title="Article author, max. length 100 characters." data-toggle="tooltip" maxlength="100" placeholder="Author of the article" required /><br>
+    <label for="author">Author:</label> 
+    <input type="text" name="author" id="author" size="50" title="Article author, max. length 100 characters." data-toggle="tooltip" maxlength="100" placeholder="Author of the comment" required /><br>
     
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" size="50"  maxlength="100" pattern="[a-zA-Z0-9À-ž\s]+" required title="You should use letters and numbers. Required" placeholder="Title of the article" data-toggle="tooltip"/><br>
-
-    <label for="content">Article content:</label>
-    <textarea name="content" id="content" spellcheck="true" cols="60" rows="20" required title="Article content. Required. Can be plain text or in HTML." data-toggle="tooltip" placeholder="Write here your article please."></textarea><br>
-
-    <label for="tags">Keywords:</label>
-    <input type="text" name="tags" id="tags" size="50" title="Keyword list. A comma separate the keyword." data-toggle="tooltip" placeholder="ex: youtube, facebook" /><br>
-
-    <label for="imageLink">Image (url):</label>
-    <input type="url" name="imageLink" id="imageLink" size="50" title="Image URL, max. length 100 characters." data-toggle="tooltip" maxlength="100"/><br>
-    
-    <button class="btn" type="button" id="btShowFileUpload">Upload image</button>
-
-    <fieldset class="added skryty" id="fsetFileUpload">
-        <legend>Image Upload</legend>
-        <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
-        <button class="btn" type="button" id="btFileUpload">Send image to server</button>
-        <button class="btn" type="button" id="btCancelFileUpload">Cancel uploading</button>
-    </fieldset><br><br>
+    <label for="content">Comment content:</label>
+    <textarea name="content" id="content" spellcheck="true" cols="60" rows="20" required title="Article content. Required. Can be plain text or in HTML." data-toggle="tooltip" placeholder="Write here your comment please."></textarea><br>
 
     <button class="btn" type="button" id="btBack">Back</button>
     <button class="btn" type="reset">Reset</button>
@@ -91,10 +74,7 @@
 <script src="js/common/queryStringProcessing.js"></script>
 <script src="js/common/formProcessing.js"></script>
 
-<script src="js/articleForm.js"></script>
-
-<!-- Google Sign In-->
-<script src="Google_SignIn/gs.js"></script>
+<script src="js/commentsForm.js"></script>
 
 <!--Summernote-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 

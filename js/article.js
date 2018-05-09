@@ -1,13 +1,16 @@
 //Domain name of the server with the article database
 var server="wt.kpi.fei.tuke.sk";
 
-var artId = queryString2obj().id;
+var artId = queryString2obj().id;//le récupère grâce à l'URL
+//document.getElementById("test-art").innerHTML="ICIIIIII "+artId;
+
 var restURL ="http://"+server+"/api/article/"+artId;
+//var restURLcom ="http://"+server+"/api/article/"+artId+"/comment/"+comId;
 
 //Code executed when the script is loaded
 writeArticle2Html("article","comments");
 
-//Adding functionality for buttons
+//Adding functionality for buttons for ARTICLE
 document.getElementById("btArtList").addEventListener("click", function(){
     window.location.href='DisplayListArticle.html';
 });
@@ -17,6 +20,14 @@ document.getElementById("btUpdate").addEventListener("click", function(){
 document.getElementById("btDelete").addEventListener("click", function(){
     deleteArticle(restURL);
 });
+
+//Adding functionality for buttons for COMMENT
+// document.getElementById("btnComUpdate").addEventListener("click", function(){
+//     window.location.href='commentsForm.html?id='+artId;
+// });
+// document.getElementById("btnComDelete").addEventListener("click", function(){
+//     deleteComment(restURLcom);
+// });
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,6 +115,30 @@ function deleteArticle(sourceURL)
                 if (status == 204) //204 = no content
                 { 
                     window.alert("Article successfully deleted.");
+                    window.location.href = "DisplayListArticle.html";
+                }
+                else
+                {
+                    errorAlert("Delete failed.",xhr);
+                }
+            }
+        );
+    }
+}
+
+function deleteComment(sourceURL)
+{
+    if(window.confirm("Do you really wish to delete this comment?"))
+    {
+        AJAXCall('DELETE', sourceURL,
+            "", null,
+            function (xhr) 
+            {
+                var status = xhr.status;
+                console.log(status + " " + xhr.statusText + " " + xhr.responseText);
+                if (status == 204) //204 = no content
+                { 
+                    window.alert("Comment successfully deleted.");
                     window.location.href = "DisplayListArticle.html";
                 }
                 else

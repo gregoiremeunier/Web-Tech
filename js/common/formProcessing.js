@@ -3,13 +3,6 @@
  */
 
 /**
- *
- * Pomocná funkcia pre addTrmSrtVal2ObjIfNotEmpty(...) a form2trimmedStringsObject(...).
- * Ak element elmWVal má atribút value, vráti jeho hodnotu po prevode na reťazec a aplikácii funkcie trim().
- * Ak ho nemá alebo elmWVal neexistuje, vráti prázdny reťayec.
- * @param elmWVal - element, ktorého hodnota sa spracuváva.
- * @returns {String} - viď. všeobecný popis funkcie
- *
  * A helper function for addTrmSrtVal2ObjIfNotEmpty(...) and form2trimmedStringsObject(...).
  * If the element elmWVal has the value attribute, it returns converted to a trimmed string.
  * If there is no value attribute or elmWVal doesn't exist, it returns an empty string.
@@ -26,13 +19,6 @@ function elmValue2TrimmedString(elmWVal){
 }
 
 /**
- * Pomocná funkcia pre form2trimmedStringsObject(...). Pridá hodnotu elmWVal.value k objektu obj ako reťazec, ale len v prípade, že
- * nebude po aplikácii funkcie trim() prázdny. Meno novej položky bude elmWVal.name.
- * Ak už položka s týmto menom existuje, prepíše ju.
- * Funkcia  trim() odstráni biele znaky na začiatku a konci reťazca
- * @param elmWVal - formulárový prvok, ktorý v sebe má danú hodnotu, ktorá sa má pridať
- * @param obj - objekt, ku ktorému sa hodnota má pridať ako nová položka
- *
  * A helper function for form2trimmedStringsObject(...). It adds the value elmWVal.value to the object obj as a string
  * but only if the value will not be an empty string after applying the trim() function. The nema of the new item will be  elmWVal.name.
  * If the item already exists, it is rewritten.
@@ -49,16 +35,6 @@ function addTrmSrtVal2ObjIfNotEmpty(elmWVal, obj){
 }
 
 /**
- * Spracuje údaje z formulára do podoby objektu, kde
- *  - meno položky     = hodnota vlastnosti 'name' daného prvku formulára
- *  - hodnota položky  = hodnota vlastnosti 'value' daného prvku formulára ako reťazec
- *                       s dstránenými bielymi znakmi na začiatku a konci
- * Ak hodnota nebola zadaná alebo je prázdny reťazec alebo obsahuje iba biele znaky, daná položka v objekte nebude.
- * POZOR: funkcia predpokladá JEDINEČNÉ MENÁ PRVKOV FORMULÁRA. Ak je viac prvkov s tým istým menom, do objektu sa uloží
- *        iba hodnota posledného z nich.
- * @param form - DOM objekt formulára
- * @returns {{}} objekt s údajmi z formulára
- *
  * Processes form data to an object, where
  *  - an item name   = value of the 'name' attribute of the given form element
  *  - an item value  = value of the 'value' attribute of the given form element as a trimmed string

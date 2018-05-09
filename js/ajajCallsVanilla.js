@@ -3,15 +3,6 @@
  */
 
 /**
- * Vykona XMLHttpRequest GET ziadost a spracuje odpoved v podobe objektu ziskaneho z odpovede v JSON formate.
- * Tato verzia je funkcna aj pre starsie prehliadace (IE 5, 6)
- * (povodny kod prevzaty z: https://mathiasbynens.be/notes/xhr-responsetype-json).
- * @param url - URL ziadosti
- * @param successHandler - funkcia, ktora spracuje objekt data, ziskany z odpovede v JSON formate.
- *                         Tento objekt by mal byt parametrom funkcie
- * @param errorHandler - funkcia, ktora sa vola, ked dojde k chybe.
- *                       Jej parametrom by malo byt cislo so statusom odpovede
- *
  * Executes XMLHttpRequest GET request and processes the response in the form of an object in the JSON format.
  * This version also works with old browsers (IE 5, 6)
  * (based on the code from: https://mathiasbynens.be/notes/xhr-responsetype-json).
@@ -49,14 +40,6 @@ function getJSONAllBr(url, successHandler, errorHandler){
 };
 
 /**
- * Vykona XMLHttpRequest GET ziadost a spracuje odpoved v podobe objektu ziskaneho z odpovede v JSON formate.
- * Tato verzia je funkcna pre novsie prehliadace, ktore poznaju hodnotu "json" pre XMLHttpRequest.responseType
- * (povodny kod prevzaty z: https://mathiasbynens.be/notes/xhr-responsetype-json).
- * @param url - URL ziadosti
- * @param successHandler - funkcia, ktora spracuje objekt data, ziskany z odpovede v JSON formate. Tento objekt by mal byt parametrom funkcie
- * @param errorHandler - funkcia, ktora sa vola, ked dojde k chybe. Jej parametrom by malo byt cislo so statusom odpovede
- *
- *
  * Executes XMLHttpRequest GET request and processes the response in the form of an object in the JSON format.
  * This version works with modern browsers, which know the value "json" of the XMLHttpRequest.responseType
  * (based on the code from: https://mathiasbynens.be/notes/xhr-responsetype-json).
@@ -84,15 +67,6 @@ function getJSONModernBr(url, successHandler, errorHandler) {
 
 
 /**
- * Vykona XMLHttpRequest GET ziadost a spracuje odpoved v podobe retazca (typ DOMString).
- * Pouziva sa na ziskanie Mustache sablony, ktora je v samostatnom subore.
- * Tato verzia je funkcna aj pre starsie prehliadace (IE 5, 6)
- * Je to vlastne funkcia getJSONAllBr bez spracovania odpovede z JSON retazca na JavaScript objekt.
- * @param url - URL ziadosti
- * @param paramObj - objekt s dalsimi parametrami pre handler-y
- * @param successHandler - funkcia, ktora spracuje retazec ziskany z odpovede. Retazec je jej prvym parametrom. Druhym je objekt s nastaveniami a udajmi spracovania.
- * @param errorHandler - funkcia, ktora sa vola, ked dojde k chybe. Jej parametrami su cislo chyby a  objekt s nastaveniami a udajmi spracovania.
- *
  * Executes XMLHttpRequest GET request and processes the response in the form of a string (DOMString type).
  * It is used to get Mustache templates from separate files.
  * This version also works with old browsers (IE 5, 6)

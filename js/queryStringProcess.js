@@ -2,14 +2,7 @@
  * Created by Stefan Korecko, 2016-18
  */
 
-
-
-
 /**
- * Sparsuje query string do objektu
- * Pozor! Ak je viac položiek s rovnakým menom, uloží sa do príslušnej položky iba posledná.
- * @returns objekt s query string
- *
  * Parses the query string to an object
  * Beware! If there are more items with the same name, it takes the last one.
  * @returns the object with the parsed query string

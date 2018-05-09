@@ -3,34 +3,33 @@ Comments
 </h1>
 
 {{#comments}}
-<article>
-<header>
-<hr>
+	<article>
+		<header>
+			<hr>
+			<b>Comment</b>:
+				{{text}}
+			</p>
 
+			<p>
+				<b>Date created</b>:
+				{{dateCreated}}
+				</p>
+			<p>
 
-<b>Comment</b>:
-{{text}}
-</p>
+			<p>
+				<b>Last updated</b>:
+				{{lastUpdated}}
+			</p>
 
-<p>
-<b>Date created</b>:
-{{dateCreated}}
-</p>
-<p>
-
-
-<p>
-<b>Last updated</b>:
-{{lastUpdated}}
-</p>
-
-<p>
-<b>Author</b>:
-{{author}}
-</p>
-</header>
-</article>
-
-
+			<p>
+				<b>Author</b>:
+				{{author}}
+			</p>
+			<p>
+				<a href="commentsForm.html?id={{id}}">Update comment</a>
+				<a href="commentsForm.html?id={{id}}">Delete comment</a>
+			</p>
+		</header>
+	</article>
 {{/comments}}
 
